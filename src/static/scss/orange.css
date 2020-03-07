@@ -1,0 +1,39 @@
+.color_orange {
+  color: #f5b50a; }
+
+.boldTextStyle_orange {
+  font-weight: bold;
+  font-size: 60rpx;
+  color: #f5b50a;
+  z-index: 1; }
+
+.leftText_orange {
+  color: #f5b50a;
+  font-size: 44rpx;
+  margin-left: 20rpx; }
+
+.rightButton_orange {
+  border-radius: 50%;
+  background-color: #f5b50a;
+  width: 110rpx;
+  height: 110rpx;
+  box-shadow: -2px 4px 6px #b88607; }
+
+.articleCategory_orange {
+  padding: 8rpx 0;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  background-color: #f5b50a;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0.7);
+  opacity: 0.6; }
+
+.articleCategory_actived_orange {
+  padding: 4rpx 0;
+  font-size: 30rpx;
+  background-color: white;
+  border: 2px solid #f5b50a;
+  color: #6b6b6b;
+  margin-right: 30rpx;
+  transform: scale(1);
+  opacity: 1; }

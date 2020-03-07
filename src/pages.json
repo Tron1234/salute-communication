@@ -1,0 +1,96 @@
+{
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/login/index"
+    },
+    {
+      "path": "pages/register/index"
+    },
+    {
+      "path": "pages/forgetPassword/index"
+    },
+    {
+      "path": "pages/chat/index"
+    },
+    {
+      "path": "pages/article/index/index"
+    },
+    {
+      "path": "pages/article/search/search"
+    },
+    {
+      "path": "pages/article/content/content"
+    },
+    {
+      "path": "pages/article/write/write",
+      "style": {
+        "disableScroll": true,
+        "app-plus": {
+          "softinputMode": "adjustResize"
+        }
+      }
+    },
+    {
+      "path": "pages/treatment/index"
+    },
+    {
+      "path": "pages/profile/index/index"
+    },
+		{
+		  "path": "pages/profile/settings/settings"
+		},
+    {
+      "path": "components/common/input/inputPhone/inputPhone"
+    },
+    {
+      "path": "components/common/input/inputPassword/inputPassword"
+    },
+    {
+      "path": "components/common/input/inputCode/inputCode"
+    },
+    {
+      "path": "components/common/nextButton/nextButton"
+    }
+  ],
+  "globalStyle": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F8F8F8",
+    "pageOrientation": "portrait"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#f5b50a",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "iconWidth": "26px",
+    "fontSize": "12px",
+    "list": [{
+        "pagePath": "pages/chat/index",
+        "text": "聊天"
+      },
+      {
+        "pagePath": "pages/article/index/index",
+        "text": "文章"
+      },
+      {
+        "pagePath": "pages/treatment/index",
+        "text": "治疗"
+      },
+      {
+        "pagePath": "pages/profile/index/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "condition": {
+    //模式配置，仅开发期间生效
+    "current": 0, //当前激活的模式(list 的索引项)
+    "list": [{
+      "name": "", //模式名称
+      "path": "pages/article/index/index", //启动页面，必选
+      "query": "" //启动参数，在页面的onLoad函数里面得到
+    }]
+  }
+}

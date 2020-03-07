@@ -1,0 +1,44 @@
+let fontStyles=[
+  {
+    leftColor:'#707070',
+    rightFont:'#FF3164',
+    rightMenu:'#999999',
+    title:'#000000',
+    content:'#484848',
+    boxShadow:'#dfdfdf',
+    backgroundColor:'#ffffff',
+    isChoose:true
+  },{
+    leftColor:'#847c6d',
+    rightFont:'#DD9126',
+    rightMenu:'#baae99',
+    title:'#000000',
+    content:'#43413E',
+    boxShadow:'#dcd7cd',
+    backgroundColor:'#F8F2E5',
+    isChoose:false
+  },{
+    leftColor:'#c1c1c1',
+    rightFont:'#FF3366',
+    rightMenu:'#FF3366',
+    title:'#ffffff',
+    content:'#cccccc',
+    boxShadow:'#515151',
+    backgroundColor:'#363636',
+    isChoose:false
+  },{
+    leftColor:'#7c7c7e',
+    rightFont:'#1347E3',
+    rightMenu:'#a2a4a5',
+    title:'#000000',
+    content:'#545656',
+    boxShadow:'#d6d6d6',
+    backgroundColor:'#F2F5F7',
+    isChoose:false
+  }
+]
+let fontSize=['15','20','25','30']  //px
+export default{
+  fontStyles,
+  fontSize
+}

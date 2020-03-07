@@ -1,0 +1,39 @@
+.color_blue {
+  color: #17abe3; }
+
+.boldTextStyle_blue {
+  font-weight: bold;
+  font-size: 60rpx;
+  color: #17abe3;
+  z-index: 1; }
+
+.leftText_blue {
+  color: #17abe3;
+  font-size: 44rpx;
+  margin-left: 20rpx; }
+
+.rightButton_blue {
+  border-radius: 50%;
+  background-color: #17abe3;
+  width: 110rpx;
+  height: 110rpx;
+  box-shadow: -2px 4px 6px #117caa; }
+
+.articleCategory_blue {
+  padding: 8rpx 0;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  background-color: #17abe3;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0.7);
+  opacity: 0.6; }
+
+.articleCategory_actived_blue {
+  padding: 4rpx 0;
+  font-size: 30rpx;
+  background-color: white;
+  border: 2px solid #17abe3;
+  color: #6b6b6b;
+  margin-right: 30rpx;
+  transform: scale(1);
+  opacity: 1; }

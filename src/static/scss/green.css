@@ -1,0 +1,39 @@
+.color_green {
+  color: #45ce3c; }
+
+.boldTextStyle_green {
+  font-weight: bold;
+  font-size: 60rpx;
+  color: #45ce3c;
+  z-index: 1; }
+
+.leftText_green {
+  color: #45ce3c;
+  font-size: 44rpx;
+  margin-left: 20rpx; }
+
+.rightButton_green {
+  border-radius: 50%;
+  background-color: #45ce3c;
+  width: 110rpx;
+  height: 110rpx;
+  box-shadow: -2px 4px 6px #359e2e; }
+
+.articleCategory_green {
+  padding: 8rpx 0;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  background-color: #45ce3c;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0.7);
+  opacity: 0.6; }
+
+.articleCategory_actived_green {
+  padding: 4rpx 0;
+  font-size: 30rpx;
+  background-color: white;
+  border: 2px solid #45ce3c;
+  color: #6b6b6b;
+  margin-right: 30rpx;
+  transform: scale(1);
+  opacity: 1; }
