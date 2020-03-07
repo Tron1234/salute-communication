@@ -41,7 +41,7 @@
 								<text class="settingTitle">{{$t('profile.settings.notice')}}</text>
 							</view>
 							<!-- toggle控制所有通知 -->
-							<switch checked :color="mainColor" />
+							<switch checked :color="mainColor" @change="allNoticeSwtich"/>
 						</view>
 
 						<view class="setting_notice_detail">
@@ -50,21 +50,21 @@
 									<text class="settingTitle">{{$t('profile.settings.robotNotice')}}</text>
 								</view>
 								<!-- toggle控制所有通知 -->
-								<switch checked :color="mainColor" />
+								<switch checked :color="mainColor" @change="robotNoticeSwtich"/>
 							</view>
 							<view class="flexVerCenter setting notice_detail">
 								<view class="flexVerCenter">
 									<text class="settingTitle">{{$t('profile.settings.articleNotice')}}</text>
 								</view>
 								<!-- toggle控制所有通知 -->
-								<switch checked :color="mainColor" />
+								<switch checked :color="mainColor" @change="articleNoticeSwtich"/>
 							</view>
 							<view class="flexVerCenter setting notice_detail">
 								<view class="flexVerCenter">
 									<text class="settingTitle">{{$t('profile.settings.treatNotice')}}</text>
 								</view>
 								<!-- toggle控制所有通知 -->
-								<switch checked :color="mainColor" />
+								<switch checked :color="mainColor" @change="treatNoticeSwtich"/>
 							</view>
 						</view>
 
@@ -129,6 +129,22 @@
 			changeLanguage(e) {
 				lang.i18n.locale = this.languages[e.detail.value].lang;
 				this.language = lang.getLanguageTitle()
+			},
+			//通知总开关
+			allNoticeSwtich(e){
+				console.log(e.detail.value)
+			},
+			//机器人通知开关
+			robotNoticeSwtich(e){
+				console.log(e.detail.value)
+			},
+			//文章通知开关
+			articleNoticeSwtich(e){
+				console.log(e.detail.value)
+			},
+			//治疗通知开关
+			treatNoticeSwtich(e){
+				console.log(e.detail.value)
 			}
 		},
 		computed: {
