@@ -41,7 +41,7 @@
 								<text class="settingTitle">{{$t('profile.settings.notice')}}</text>
 							</view>
 							<!-- toggle控制所有通知 -->
-							<switch checked :color="mainColor" @change="allNoticeSwtich"/>
+							<switch checked :color="mainColor" :checked="allowControlledNotice" @change="allNoticeSwtich" />
 						</view>
 
 						<view class="setting_notice_detail">
@@ -50,21 +50,21 @@
 									<text class="settingTitle">{{$t('profile.settings.robotNotice')}}</text>
 								</view>
 								<!-- toggle控制所有通知 -->
-								<switch checked :color="mainColor" @change="robotNoticeSwtich"/>
+								<switch checked :color="mainColor" :disabled="!allowControllNotice" :checked="allowControllNotice" @change="robotNoticeSwtich" />
 							</view>
 							<view class="flexVerCenter setting notice_detail">
 								<view class="flexVerCenter">
 									<text class="settingTitle">{{$t('profile.settings.articleNotice')}}</text>
 								</view>
 								<!-- toggle控制所有通知 -->
-								<switch checked :color="mainColor" @change="articleNoticeSwtich"/>
+								<switch checked :color="mainColor" :disabled="!allowControllNotice" :checked="allowControllNotice" @change="articleNoticeSwtich" />
 							</view>
 							<view class="flexVerCenter setting notice_detail">
 								<view class="flexVerCenter">
 									<text class="settingTitle">{{$t('profile.settings.treatNotice')}}</text>
 								</view>
 								<!-- toggle控制所有通知 -->
-								<switch checked :color="mainColor" @change="treatNoticeSwtich"/>
+								<switch checked :color="mainColor" :disabled="!allowControllNotice" :checked="allowControllNotice" @change="treatNoticeSwtich" />
 							</view>
 						</view>
 
@@ -115,6 +115,11 @@
 				tempCache: uni.getStorageInfoSync().currentSize,
 				languages: this.$store.state.languages,
 				language: lang.getLanguageTitle(),
+				allowControllNotice: true, //允许总控制通知
+				allowRebotNotice: true,
+				allowArticleNotice: true,
+				allowTreatNotice: true,
+				allowControlledNotice: true //通过下面三个按钮控制总通知
 			}
 		},
 		methods: {
@@ -131,20 +136,36 @@
 				this.language = lang.getLanguageTitle()
 			},
 			//通知总开关
-			allNoticeSwtich(e){
-				console.log(e.detail.value)
+			allNoticeSwtich(e) {
+				this.allowControllNotice = e.detail.value;
+				this.allowControlledNotice = e.detail.value;
+				this.allowRebotNotice = e.detail.value;
+				this.allowArticleNotice = e.detail.value;
+				this.allowTreatNotice = e.detail.value;
 			},
 			//机器人通知开关
-			robotNoticeSwtich(e){
-				console.log(e.detail.value)
+			robotNoticeSwtich(e) {
+				this.allowRebotNotice = e.detail.value;
+				if (!this.allowRebotNotice && !this.allowArticleNotice && !this.allowTreatNotice) {
+					this.allowControllNotice = e.detail.value;
+					this.allowControlledNotice = e.detail.value;
+				}
 			},
 			//文章通知开关
-			articleNoticeSwtich(e){
-				console.log(e.detail.value)
+			articleNoticeSwtich(e) {
+				this.allowArticleNotice = e.detail.value;
+				if (!this.allowRebotNotice && !this.allowArticleNotice && !this.allowTreatNotice) {
+					this.allowControllNotice = e.detail.value;
+					this.allowControlledNotice = e.detail.value;
+				}
 			},
 			//治疗通知开关
-			treatNoticeSwtich(e){
-				console.log(e.detail.value)
+			treatNoticeSwtich(e) {
+				this.allowTreatNotice = e.detail.value;
+				if (!this.allowRebotNotice && !this.allowArticleNotice && !this.allowTreatNotice) {
+					this.allowControllNotice = e.detail.value;
+					this.allowControlledNotice = e.detail.value;
+				}
 			}
 		},
 		computed: {
