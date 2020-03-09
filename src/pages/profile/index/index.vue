@@ -78,7 +78,8 @@
 						</view>
 						<my-icons type="go" size="14" color="#d3d3d3" />
 					</navigator>
-					<navigator class="flexVerCenter basicBtn" style="border-bottom: none;" url="/pages/profile/settings/settings" hover-class="none">
+					<navigator class="flexVerCenter basicBtn" style="border-bottom: none;" url="/pages/profile/settings/settings"
+					 hover-class="none">
 						<view class="flexVerCenter">
 							<my-icons class="basicIcon" type="profile-settings" size="27" color="#959595" />
 							<text class="basicTitle">{{$t('profile.index.settings')}}</text>
@@ -92,31 +93,38 @@
 </template>
 
 <script>
-	import myIcons from "common/my-icons/my-icons";
-	import uniStatusBar from "common/navBar/uni-status-bar/uni-status-bar";
+	import myIcons from "common/my-icons/my-icons"
+	import * as types from 'store/mutations-types'
+	import uniStatusBar from "common/navBar/uni-status-bar/uni-status-bar"
 	export default {
 		name: 'chat',
 		data() {
 			return {
 				windowHeight: uni.getSystemInfoSync().windowHeight,
 				userName: 'Tron',
-				cloudLeave: false, //云离开动画
-				mainColor: this.$store.getters.getHexColor
+				cloudLeave: false //云离开动画
 			}
 		},
 		computed: {
 			windowContentHeight() {
 				return (this.windowHeight - uni.getSystemInfoSync().statusBarHeight) + 'px';
+			},
+			mainColor() {
+				return this.$store.getters.getHexColor;
 			}
 		},
 		methods: {
+			changeTabbarIcon() {
 
+			}
 		},
 		components: {
 			uniStatusBar,
 			myIcons
 		},
 		onShow() {
+			this.$store.commit(types.CHANGETABBARMAINCOLOR);
+			this.$store.commit(types.CHANGESELECTEDCOLOR);
 			setTimeout(() => {
 				this.cloudLeave = true;
 			}, 200)
@@ -276,9 +284,10 @@
 		background-color: #e9f6f7;
 		border-radius: 50%;
 	}
-	.funcIcon{
+
+	.funcIcon {
 		position: relative;
-		top:4rpx;
+		top: 4rpx;
 	}
 
 	.funcBtnsTitleBox {

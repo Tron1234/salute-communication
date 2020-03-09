@@ -28,8 +28,7 @@
     data() {
       return {
         phoneIsTrue: false,
-        phoneNum: '',
-        color: this.$store.getters.getHexColor
+        phoneNum: ''
       }
     },
     components:{
@@ -55,8 +54,11 @@
     },
     computed: {
       hidden() {
-        return this.phoneIsTrue ? '' : 'hidden'
-      }
+        return this.phoneIsTrue ? '' : 'hidden';
+      },
+			color(){
+				return this.$store.getters.getHexColor;
+			} 
     }
   }
 </script>

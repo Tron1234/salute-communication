@@ -5,7 +5,7 @@
 			<view class="flexHorCenter" style="width:100%">
 				<view class="flexVerCenter settings">
 					<!-- 主题色 -->
-					<view style="width: 100%;">
+					<view class="flexColum" style="width: 100%;">
 						<view class="flexVerCenter setting">
 							<view class="flexVerCenter">
 								<my-icons class="settingIcon" type="settings-themecolor" size="22" color="#959595" />
@@ -16,9 +16,13 @@
 							</view>
 						</view>
 						<!-- 从上滑下的颜色选择器 -->
-						<view>
-
-						</view>
+						<scroll-view class="mainColorsBox" scroll-x>
+							<view class="flexRow">
+								<view v-for="(item,index) in getAllMainColor" :key="index" class="mainColors" :style="{backgroundColor:!chooseMainColor[getChooseMainColor[index]]?item:'', border:chooseMainColor[getChooseMainColor[index]]?'2px solid'+item:'',marginLeft:0!=index?maincolorInterval:''}" @tap="changeThemeColor(index)">
+									<view class="mainColorInside" :style="{backgroundColor:chooseMainColor[getChooseMainColor[index]]?item:''}"/>
+								</view>
+							</view>
+						</scroll-view>
 					</view>
 					<!-- 语言 -->
 					<!-- #ifndef MP -->
@@ -105,13 +109,14 @@
 <script>
 	import myIcons from "common/my-icons/my-icons";
 	import navBar from 'content/profile/settings/navBar'
+	import * as colorTypes from 'store/mainColor-types.js'
+	import * as types from 'store/mutations-types'
 	import lang from 'lang'
 	export default {
 		name: '',
 		data() {
 			return {
 				windowHeight: uni.getSystemInfoSync().windowHeight,
-				mainColor: this.$store.getters.getHexColor,
 				tempCache: uni.getStorageInfoSync().currentSize,
 				languages: this.$store.state.languages,
 				language: lang.getLanguageTitle(),
@@ -123,6 +128,10 @@
 			}
 		},
 		methods: {
+			changeThemeColor(index){
+				this.$store.commit(types.CHANGETHEMECOLOR,this.getAllMainColorName[index]);
+				this.$store.commit(types.CHANGEMAINCOLOR);
+			},
 			clearCache() {
 				try {
 					uni.clearStorageSync();
@@ -180,7 +189,41 @@
 					cacheNum = cacheNum + 'KB';
 				}
 				return cacheNum;
-			}
+			},
+			getAllMainColor() {
+				let allMainColor = [];
+				for (let key in colorTypes) {
+					if (key.endsWith("HEXCOLOR")) {
+						allMainColor.push(colorTypes[key]);
+					}
+				}
+				return allMainColor;
+			},
+			getAllMainColorName() {
+				let allMainColor = [];
+				for (let key in colorTypes) {
+					if (!key.endsWith("HEXCOLOR")) {
+						allMainColor.push(colorTypes[key]);
+					}
+				}
+				return allMainColor;
+			},
+			getChooseMainColor(){
+				let chooseMainColors=[];
+				for(let key in this.chooseMainColor){
+					chooseMainColors.push(key);
+				}
+				return chooseMainColors;
+			},
+			maincolorInterval() {
+				return (uni.getSystemInfoSync().windowWidth * 0.9 * 0.84 - 40 * 4) / 3 + 'px';
+			},
+			mainColor(){
+				return this.$store.getters.getHexColor;
+			},
+			chooseMainColor(){
+				return this.$store.state.chooseMainColor;
+			} 
 		},
 		components: {
 			navBar,
@@ -227,5 +270,27 @@
 		font-size: 34rpx;
 		color: #bababa;
 		margin-right: 20rpx;
+	}
+
+	.mainColorsBox {
+		width: 84%;
+		box-sizing: border-box;
+		margin-left:12%;
+		padding: 3% 0;
+		border-bottom: 1px solid #efefef;
+	}
+
+	.mainColors {
+		box-sizing: border-box;
+		min-width: 80rpx;
+		max-width: 80rpx;
+		height: 80rpx;
+		border-radius: 50%;
+		padding: 4rpx;
+	}
+	.mainColorInside{
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
 	}
 </style>

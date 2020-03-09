@@ -73,7 +73,6 @@
     data() {
       return {
         color: this.$store.state.chooseMainColor,
-        colorHex:this.$store.getters.getHexColor,
         categorys: this.$store.state.articleCategorys,
 				windowHeight:uni.getSystemInfoSync().windowHeight,
         current: 0,
@@ -191,9 +190,12 @@
       //#endif
       scrollTop() {
         return (uni.getSystemInfoSync().statusBarHeight + 44 + 34);
-      }
+      },
+			colorHex(){
+				return this.$store.getters.getHexColor;
+			}
     },
-    created() {
+    onLoad() {
       this.$store.commit(types.CHANGETABBARMAINCOLOR);
       this.$store.commit(types.CHANGESELECTEDCOLOR);
     }

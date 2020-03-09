@@ -46,7 +46,6 @@
         keyboardHeight: 0, //键盘的高度
         isIOS: false, //平台是否是ios
         editorCtx: '',
-        mainColor: this.$store.getters.getHexColor,
         leftPoint: 4
       }
     },
@@ -185,7 +184,10 @@
       },
       childNodeWidth() {
         return parseFloat((this.windowWidth - 40 - 7 * 20) / 6);
-      }
+      },
+			mainColor(){
+				return this.$store.getters.getHexColor;
+			}
     },
     created() {
       const platform = uni.getSystemInfoSync().platform

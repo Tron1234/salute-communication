@@ -38,7 +38,6 @@
     data() {
       return {
         eyeStatus: false,
-        color: this.$store.getters.getHexColor,
         password: '',
         errorTip: false
       }
@@ -77,8 +76,11 @@
     },
     computed: {
       inputTipError() {
-        return this.errorTip ? 'inputTipError' : ''
-      }
+        return this.errorTip ? 'inputTipError' : '';
+      },
+			color(){
+				return this.$store.getters.getHexColor;
+			}
     }
   }
 </script>

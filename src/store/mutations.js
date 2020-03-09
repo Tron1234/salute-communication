@@ -28,5 +28,8 @@ export default {
         state.chooseMainColor[colorAttr] = false;
       }
     }
-  }
+  },
+	[types.CHANGETHEMECOLOR](state,color){
+		state.mainColor=color;
+	}
 }
