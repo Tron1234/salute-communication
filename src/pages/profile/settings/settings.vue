@@ -80,12 +80,12 @@
 
 						</view>
 						<!-- 清空缓存 -->
-						<view class="flexVerCenter setting">
+						<view class="flexVerCenter setting" @tap="clearCache">
 							<view class="flexVerCenter">
 								<my-icons class="settingIcon" type="settings-caching" size="22" color="#959595" />
 								<text class="settingTitle">{{$t('profile.settings.clearCaching')}}</text>
 							</view>
-							<view @tap="clearCache">
+							<view>
 								<text class="cacheNumStyle">{{cacheNum}}</text>
 								<my-icons type="go" size="14" color="#d3d3d3" />
 							</view>
