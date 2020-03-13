@@ -119,10 +119,10 @@ const en_US = {
 			themeColor:'Theme color',
 			language:'Language',
 			notice:'Notice',
-			robotNotice:'Rebot Notice',
-			articleNotice:'Article Notice',
-			treatNotice:'Treat Notice',
-			clearCaching:'Clear Cache',
+			robotNotice:'Rebot notice',
+			articleNotice:'Article notice',
+			treatNotice:'Treat notice',
+			clearCaching:'Clear cache',
 			help:'Help',
 			about:'About'
 		}
