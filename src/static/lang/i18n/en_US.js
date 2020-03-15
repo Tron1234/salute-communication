@@ -107,7 +107,7 @@ const en_US = {
       greetings: 'Good luck',
 			article:'Article',
 			like:'Likes',
-			treatment:'Treatment',
+			treatment:'Treat',
 			message:'Message',
 			basics:'basics',
 			information:'Personal information',
@@ -128,9 +128,9 @@ const en_US = {
 		}
   },
   tabBar: {
-    chat: 'chat',
+    rebot: 'John',
     article: 'article',
-    treatment: 'treatment',
+    treatment: 'treat',
     profile: 'profile'
   }
 }

@@ -1,4 +1,6 @@
 export const CHANGETABBARMAINCOLOR = 'changeTabBarMainColor'
+export const CHANGETABBARGIRLMAINCOLOR = 'changeTabBarGirlMainColor'
+export const CHANGETABBARBOYMAINCOLOR = 'changeTabBarBoyMainColor'
 export const CHANGESELECTEDCOLOR = 'changeSelectedColor'
 export const CHANGEMAINCOLOR = 'changeMainColor'
 export const CHANGETHEMECOLOR = 'changeThemeColor'

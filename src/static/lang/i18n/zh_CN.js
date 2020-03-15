@@ -128,7 +128,7 @@ const zh_CN = {
 		}
   },
   tabBar: {
-    chat: '聊天',
+    rebot: '小致',
     article: '文章',
     treatment: '治疗',
     profile: '我的'

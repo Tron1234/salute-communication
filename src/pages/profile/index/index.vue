@@ -15,7 +15,12 @@
 						<navigator class="flexCenter funcBtn" url="">
 							<!-- 图标 -->
 							<view class="flexCenter funcIconBox">
+								<!-- #ifndef MP -->
 								<my-icons class="funcIcon" type="profile-article" size="22" :color="mainColor" />
+								<!-- #endif -->
+								<!-- #ifdef MP -->
+								<my-icons type="profile-article" size="22" :color="mainColor" />
+								<!-- #endif -->
 							</view>
 							<!-- 标题和数量 -->
 							<view class="funcBtnsTitleBox">
@@ -26,7 +31,12 @@
 						<navigator class="flexCenter funcBtn" url="">
 							<!-- 图标 -->
 							<view class="flexCenter funcIconBox">
+								<!-- #ifndef MP -->
+								<my-icons class="funcIcon" style="left: 2rpx;" type="profile-collect" size="22" color="#FF3366" />
+								<!-- #endif -->
+								<!-- #ifdef MP -->
 								<my-icons type="profile-collect" size="22" color="#FF3366" />
+								<!-- #endif -->
 							</view>
 							<!-- 标题和数量 -->
 							<view class="funcBtnsTitleBox">
@@ -40,7 +50,12 @@
 						<navigator class="flexCenter funcBtn" url="">
 							<!-- 图标 -->
 							<view class="flexCenter funcIconBox" style="background-color: #faf3f3;">
+								<!-- #ifndef MP -->
+								<my-icons class="funcIcon" style="top:6rpx;left: 2rpx;" type="profile-psychotherapy" size="22" color="#35be3c" />
+								<!-- #endif -->
+								<!-- #ifdef MP -->
 								<my-icons class="funcIcon" type="profile-psychotherapy" size="22" color="#35be3c" />
+								<!-- #endif -->
 							</view>
 							<!-- 标题和数量 -->
 							<view class="funcBtnsTitleBox">
@@ -51,7 +66,12 @@
 						<navigator class="flexCenter funcBtn" url="">
 							<!-- 图标 -->
 							<view class="flexCenter funcIconBox">
-								<my-icons class="funcIcon" style="top:2rpx" type="profile-notice" size="22" color="#b41fee" />
+								<!-- #ifndef MP -->
+								<my-icons class="funcIcon" style="left: 2rpx;" type="profile-notice" size="22" color="#b41fee" />
+								<!-- #endif -->
+								<!-- #ifdef MP -->
+								<my-icons type="profile-notice" size="22" color="#b41fee" />
+								<!-- #endif -->
 							</view>
 							<!-- 标题和数量 -->
 							<view class="funcBtnsTitleBox">

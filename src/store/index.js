@@ -15,7 +15,9 @@ const state = {
     isGreen: false,
     isPink: false
   },
-  tabBarName: ['chat', 'article', 'treatment', 'profile'],
+  tabBarName: ['rebot', 'article', 'treatment', 'profile'],
+	tabBarNameGirl:['rebot_girl', 'article', 'treatment', 'profile'],
+	tabBarNameBoy:['rebot_boy', 'article', 'treatment', 'profile'],
   languages: [{
     lang:'zh_CN',
     name:'简体中文'
