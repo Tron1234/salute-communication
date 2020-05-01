@@ -40,6 +40,9 @@
 		{
 		  "path": "pages/profile/settings/settings"
 		},
+		{
+		  "path": "pages/profile/article/article"
+		},
     {
       "path": "components/common/input/inputPhone/inputPhone"
     },

@@ -12,7 +12,7 @@
 			<view class="functionBox">
 				<view class="flexVerCenter funcBtnsBox">
 					<view class="flexVerCenter funcBtns" style="margin-bottom: 5%;">
-						<navigator class="flexCenter funcBtn" url="">
+						<navigator class="flexCenter funcBtn" url="/pages/profile/article/article">
 							<!-- 图标 -->
 							<view class="flexCenter funcIconBox">
 								<!-- #ifndef MP -->
